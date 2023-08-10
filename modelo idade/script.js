@@ -11,7 +11,7 @@ function verificar() {
         var gênero = ''
         var img = document.createElement('img')
         img.setAttribute('id', 'foto')
-        if (sex[0].checked) {
+        if (fsex[0].checked) {
             gênero = 'Homem'
             if (idade >=0 && idade <10) {
                 //criança
@@ -27,7 +27,7 @@ function verificar() {
                 img.setAttribute('src', 'idoso-h.jpeg')
             }
             
-        } else if (sex[1].checked) {
+        } else if (fsex[1].checked) {
             gênero = 'Mulher'
             if (idade >=0 && idade <10) {
                 //criança
@@ -42,5 +42,4 @@ function verificar() {
         res.style.textAlign = 'center'
         res.innerHTML = `Detectamos ${gênero} com ${idade} anos.`
     }
-
 }
