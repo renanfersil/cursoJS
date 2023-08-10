@@ -1,25 +1,46 @@
-//var nome = window.prompt('Olá, qual é o seu nome?')
-   // document.write(`Olá, <strong>${nome}</strong>! `)
-    
-function carregar() {
-    var nome = window.prompt('Olá, qual é o seu nome?')
-    
-    var msg = window.document.getElementById('msg')
-    var img = window.document.getElementById('imagem')
+function verificar() {
     var data = new Date()
-    var hora = data.getHours()
-    msg.innerHTML = `Olá, <strong>${nome}</strong>! agora são <strong>${hora}</strong> horas!`
-    if (hora >= 0 && hora < 12) {
-        // BOM DIA
-        img.src = 'fotomanha.jpg'
-        document.body.style.background = 'rgb(247, 203, 138)'
-    } else if (hora >= 12 && hora <= 18) {
-        // BOA TARDE
-        img.src = 'fototarde.jpg'
-        document.body.style.background = 'rgb(219, 160, 91)'
+    var ano = data.getFullYear()
+    var fano = document.getElementById('txtano')
+    var res = document.querySelector('div#res')
+    if (fano.value.length == 0 || Number (fano.value) > ano) {
+        window.alert('[ERROR] Verifique os dados e tente novamente!')
     } else {
-        // BOA NOITE
-        img.src = 'fotonoite.jpg'
-        document.body.style.background = 'rgb(13, 17, 216)'
+        var fsex = document.getElementsByName('radsex')
+        var idade = ano - Number(fano.value)
+        var gênero = ''
+        var img = document.createElement('img')
+        img.setAttribute('id', 'foto')
+        if (sex[0].checked) {
+            gênero = 'Homem'
+            if (idade >=0 && idade <10) {
+                //criança
+                img.setAttribute('src', 'bebe-h.jpg')
+            } else if (idade < 21) {
+                // jovem
+                img.setAttribute('src', 'jovem-h.jpg')
+            } else if (idade < 50) {
+                // adulto
+                img.setAttribute('src', 'adulto-h.jpg')
+            } else {
+                // idoso
+                img.setAttribute('src', 'idoso-h.jpeg')
+            }
+            
+        } else if (sex[1].checked) {
+            gênero = 'Mulher'
+            if (idade >=0 && idade <10) {
+                //criança
+            } else if (idade < 21) {
+                // jovem
+            } else if (idade < 50) {
+                // adulto
+            } else {
+                // idoso
+            }
+        }
+        res.style.textAlign = 'center'
+        res.innerHTML = `Detectamos ${gênero} com ${idade} anos.`
     }
+
 }
