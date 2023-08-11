@@ -33,3 +33,7 @@ div {
     text-align: center;
     padding: 10px;
 }
+
+img {
+    border-radius: 10px;
+}
