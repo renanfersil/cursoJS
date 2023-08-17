@@ -1,17 +1,19 @@
-function gerar() {
-    var sel = document.getElementById('select')
-    var bt = document.getElementById('bt')
-    var res = document.getElementById('res')
-
-    
-
-    if (sel.value.length == 0 || bt.value.length == 0) {
-        window.alert('[ERRO] Faltam dados!')
+function tabuada() {
+    let num = document.getElementById('txtn')
+    let tab = document.getElementById('seltab')
+    if (num.value.length == 0) {
+        window.alert('Por favor, digite um número!')
     } else {
-        res.innerHTML = 'Contando: '
+            let n = Number(num.value)
+            let c = 1
+            tab.innerHTML = ''
+            while (c <= 10) {
+                let item = document.createElement('option')
+                item.text = `${n} x ${c} = ${n*c}`
+                item.value = `tab${c}`
+                tab.appendChild(item)
+                c++
+            }
 
-        for(let c = i; c <= f; c+= p) {
-            res.innerHTML += `${c}`
-        }
     }
 }

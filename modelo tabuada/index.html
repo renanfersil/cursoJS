@@ -11,12 +11,14 @@
         <h1>Tabuada</h1>
     </header>
     <section>
-        <div id="dados">
-           <p><select name="select" id="select"></select></p>
-           <p><input type="button" value="contar" onclick="gerar()"></p>
+        <div>
+           <p>Número: <input type="number" name="num" id="txtn">
+           <input type="button" value="Gerar Tabuada" onclick="tabuada()"></p>
         </div>
-        <div id="res">
-            Preparando o resultado...
+        <div>
+            <select name="tabuada" id="seltab" size="10">
+                <option>Digite um número acima</option>
+            </select>
         </div>
     </section>
     <footer>
